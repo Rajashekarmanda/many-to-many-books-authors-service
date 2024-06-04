@@ -995,3 +995,9 @@ Caused by: org.h2.jdbc.JdbcSQLInvalidAuthorizationSpecException: Wrong user name
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:510)
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
 	... 50 more
+2024-06-04 12:59:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOOK_AUTHOR" not found; SQL statement:
+select authors0_.bookid as bookid1_2_0_, authors0_.authorid as authorid2_2_0_, author1_.authorid as authorid1_0_1_, author1_.authorname as authorna2_0_1_ from book_author authors0_ inner join author author1_ on authors0_.authorid=author1_.authorid where authors0_.bookid=? [42102-214]
+2024-06-04 12:59:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "BOOK_AUTHOR" not found; SQL statement:
+select authors0_.bookid as bookid1_2_0_, authors0_.authorid as authorid2_2_0_, author1_.authorid as authorid1_0_1_, author1_.authorname as authorna2_0_1_ from book_author authors0_ inner join author author1_ on authors0_.authorid=author1_.authorid where authors0_.bookid=? [42102-214]

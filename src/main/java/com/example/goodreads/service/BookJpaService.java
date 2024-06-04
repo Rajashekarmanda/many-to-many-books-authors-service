@@ -1,5 +1,6 @@
 package com.example.goodreads.service;
 
+import com.example.goodreads.model.Author;
 import com.example.goodreads.model.Book;
 import com.example.goodreads.model.Publisher;
 import com.example.goodreads.repository.BookJpaRepository;
@@ -94,6 +95,16 @@ public class BookJpaService implements BookRepository {
         try {
             Book book = bookJpaRepository.findById(bookId).get();
             return book.getPublisher();
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @Override
+    public List<Author> getBookAuthors(int bookId) {
+        try {
+            Book bookFound = bookJpaRepository.findById(bookId).get();
+            return bookFound.getAuthors();
         } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         }

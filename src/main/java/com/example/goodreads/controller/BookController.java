@@ -1,6 +1,5 @@
 package com.example.goodreads.controller;
 
-import com.example.goodreads.model.Publisher;
 import com.example.goodreads.service.BookJpaService;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +9,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 
-import com.example.goodreads.model.Book;
+import com.example.goodreads.model.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.*;
@@ -49,5 +49,10 @@ class BookController {
     @GetMapping("/books/{bookId}/publisher")
     public Publisher getBookPublisher(@PathVariable("bookId") int bookId) {
         return bookService.getBookPublisher(bookId);
+    }
+
+    @GetMapping("/books/{bookId}/authors")
+    public List<Author> getBookAuthors(@PathVariable("bookId") int bookId) {
+        return bookService.getBookAuthors(bookId);
     }
 }

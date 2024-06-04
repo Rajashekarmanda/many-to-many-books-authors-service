@@ -1,9 +1,8 @@
 package com.example.goodreads.repository;
 
-import java.util.ArrayList;
+import java.util.*;
 
-import com.example.goodreads.model.Book;
-import com.example.goodreads.model.Publisher;
+import com.example.goodreads.model.*;
 
 public interface BookRepository {
     ArrayList<Book> getBooks();
@@ -17,4 +16,6 @@ public interface BookRepository {
     void deleteBook(int bookId);
 
     Publisher getBookPublisher(int bookId);
+
+    List<Author> getBookAuthors(int bookId);
 }
